@@ -14,12 +14,12 @@ let transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: config.nodemailDetails.email, // 
-    pass: config.nodemailDetails.password //
+    user: process.env.USER_NAME, // 
+    pass: process.env.PASSWORD //
   },
 });
 await transporter.sendMail({
-  from: config.nodemailDetails.email, // sender address
+  from: process.env.USER_NAME, // sender address
   to: email, // list of receivers
   subject: "Reset Link", // Subject line
   html: `<b>Rest Link ${link}</b>`, // html body
