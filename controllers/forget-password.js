@@ -45,7 +45,7 @@ const Postforget = async (req, res) => {
     return;
   }
   const token = createtoken(user._id, user.password, user.email);
-  const link = 'http://localhost:' + process.env.PORT + '/reset-token/' + user.id + '/' + token;
+  const link = 'https://task1-kvhj.onrender.com' + '/reset-token/' + user.id + '/' + token;
   console.log(link)
   nodemailfunc(email, link);
   
