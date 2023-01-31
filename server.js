@@ -32,6 +32,10 @@ app.use('/api/v1/',signup);
 app.use('/api/v1/',forgetpassword);
 app.use('/',resetToken);
 
+app.get('/', (req,res)=>{
+  res.send("hello");
+});
+
 //listen
 app.listen(process.env.PORT, function () {
   console.log("Server started on port",process.env.PORT);
