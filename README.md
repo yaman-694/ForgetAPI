@@ -18,4 +18,4 @@
 ### ResetToken
 
 You will get a link on mail
-https://task1-kvhj.onrender.com/reset-token/ paste from mail
+https://task1-kvhj.onrender.com/reset-token/:id/:token paste from mail
