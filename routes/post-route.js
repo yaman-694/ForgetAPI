@@ -4,10 +4,11 @@ const router = express.Router();
 
 import * as path from 'path'
 //import controllers
-import {addImage,deletePost,updatePost} from '../controllers/post-controller.js';
+import {addImage,deletePost,updatePost,showPost} from '../controllers/post-controller.js';
 import verifyToken from '../middleware/verifyToken.js'
 import likePost from '../controllers/like-post-controller.js';
 import addComment from '../controllers/commnet-post.js';
+import postModel from '../models/post-model.js';
 //deep modify this function rename the name of file then upload and so we can 
 // use the name of the file in the controllers/user-post.js 
 const storage = multer.diskStorage({
@@ -32,6 +33,7 @@ const upload = multer({ storage: storage});
 
 //post
 router.post('/upload',verifyToken,upload.single('image'),addImage).delete('/delete/:id',verifyToken,deletePost).patch('/update',verifyToken,updatePost);
+router.get('/showPost',verifyToken,showPost);
 //likes
 router.post('/like/:postId',verifyToken,likePost);
 //comment

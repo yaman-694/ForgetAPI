@@ -63,10 +63,20 @@ const updatePost = async (req, res) => {
     }
 }   
 
-
+const showPost = async (req,res)=>{
+    try{
+        postModel.find({}).then((user)=>{
+            res.status(200).json({status:"Success",data:user});
+        }).catch((error)=>{
+            res.status(500).json({status:"Failed",message:error.message});
+        })
+    }catch(error){
+        res.status(500).json({status:"Failed",message:error.message});
+    }
+}
 
 export default addImage;
-export { deletePost,addImage,updatePost };
+export { deletePost, addImage, updatePost ,showPost};
 
 
 
