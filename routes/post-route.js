@@ -8,12 +8,11 @@ import {addImage,deletePost,updatePost,showPost} from '../controllers/post-contr
 import verifyToken from '../middleware/verifyToken.js'
 import likePost from '../controllers/like-post-controller.js';
 import addComment from '../controllers/commnet-post.js';
-import postModel from '../models/post-model.js';
 //deep modify this function rename the name of file then upload and so we can 
 // use the name of the file in the controllers/user-post.js 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'images');
+        cb(null, '../images');
     },
     filename:(req,file,cb)=>{
         console.log(file);
