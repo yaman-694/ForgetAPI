@@ -12,7 +12,7 @@ import addComment from '../controllers/commnet-post.js';
 // use the name of the file in the controllers/user-post.js 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, '../images');
+        cb(null, 'images');
     },
     filename:(req,file,cb)=>{
         console.log(file);

@@ -8,7 +8,7 @@ const addComment = async (req, res) => {
         const postId = req.params.postId;
         const comment = req.body.comment;
         console.log("printing user in controller", req.body.comment);
-        //find post 
+        //find pos t 
         postModel.findById(postId).then((post) => {
             if (!post) {
                 res.json({ status: "error", message: "No post found", data: null });
