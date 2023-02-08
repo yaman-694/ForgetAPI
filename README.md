@@ -21,7 +21,15 @@ You will get a link on mail
 https://task1-kvhj.onrender.com/reset-token/:id/:token paste from mail
 
 ### post
-
+-- for below api use local project setup on your system
+- .env file
+```
+PORT=3000
+MONGO_DB = mongodb://127.0.0.1:27017/task1
+TOKEN_HEADER_KEY= thisismyfakekeywhythisissogood
+USER_NAME= email@gmail.com
+PASSWORD= password
+```
 - `/api/v1/upload` to upload the post user form-data name as ( image ) as shown in video
 
 - `/api/v1/delete/:id` to delete the post replace :id with postId which is to be deleted
