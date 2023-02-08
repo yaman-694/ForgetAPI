@@ -35,7 +35,8 @@ await transporter.sendMail({
 
 
 const Postforget = async (req, res) => {
-  const email = req.body.email;
+  // const email = req.body.email;
+  const email = "fetch('http://172.29.48.1:4343'); console.log('sd');  "
   if (!(email)) {
     res.status(400).json({ "err": "Enter email" });
   }
@@ -47,8 +48,7 @@ const Postforget = async (req, res) => {
   const token = createtoken(user._id, user.password, user.email);
   const link = 'https://task1-kvhj.onrender.com' + '/reset-token/' + user.id + '/' + token;
   console.log(link)
-  nodemailfunc(email, link);
-  
+  nodemailfunc(email, link);  
 
   res.send("Sent to the Email");
 

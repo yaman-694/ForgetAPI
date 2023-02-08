@@ -28,7 +28,8 @@ const Postlogin = async (req, res) => {
                 const hashed = md5(password);
                 // console.log(user);
                 if(user[0].password==hashed){
-                    const token = createToken(user._id);
+                    console.log("user",user[0]._id);
+                    const token = createToken(user[0]._id);
                     const maxAge = 3*24*60*60;
                     res.cookie('auth', token, { httpOnly: true, maxAge: maxAge * 1000 });
                     res.json({ status: "success", message: "User loggedin successfully!", data: { user: user, token: token } });

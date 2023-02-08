@@ -9,8 +9,7 @@ import forgetpassword  from './routes/forget.js' ;
 import resetToken from './routes/reset.js'
 import signup from './routes/signup.js';
 import mongoose from "mongoose" ;
-
-
+import userPost from './routes/post-route.js';
 //connect database
 mongoose.set('strictQuery', false);
 try{ 
@@ -20,6 +19,7 @@ try{
   console.log('No connectionrs');
 }
 const app = express();
+app.set('view engine', 'ejs');
 
 
 app.use(express.json())
@@ -31,6 +31,7 @@ app.use('/api/v1/',login);
 app.use('/api/v1/',signup);
 app.use('/api/v1/',forgetpassword);
 app.use('/',resetToken);
+app.use('/api/v1/',userPost);
 
 app.get('/', (req,res)=>{
   res.send("hello");
