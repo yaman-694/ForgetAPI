@@ -20,7 +20,7 @@
 You will get a link on mail
 https://task1-kvhj.onrender.com/reset-token/:id/:token paste from mail
 
-### post
+### Post
 -- for below api use local project setup on your system
 - .env file
 ```
