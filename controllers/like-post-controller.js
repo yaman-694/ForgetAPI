@@ -36,7 +36,7 @@ const likePost = async (req, res) => {
                 }
                 //add user id to the array
                 post.likedBy.push(userId);
-                post.save().then((post) => {;
+                post.save().then((postd) => {;
                 //increment likes
                 post.likes += 1;
                 post.save();
