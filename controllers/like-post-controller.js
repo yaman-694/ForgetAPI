@@ -24,7 +24,7 @@ const likePost = async (req, res) => {
                     post.likes-=1;
                     post.save().then((post) => {
                     //delee the user id from the array
-                    post.likedy = _.filter(post.likedBy, (id) => {
+                    post.likedBy = _.filter(post.likedBy, (id) => {
                         return id != userId;
                     });
                     post.save();
